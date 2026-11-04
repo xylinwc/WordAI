@@ -1,0 +1,67 @@
+{
+  "name": "wordai-v2",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Mac Word 侧栏 AI 写作助手：Pi 当内核，Office.js 当手，所有写入先预览再确认",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "word",
+    "office-addin",
+    "officejs",
+    "ai",
+    "writing-assistant",
+    "pi"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xylinwc/WordAI.git"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n web,api -c cyan,magenta \"vite\" \"tsx watch server/index.ts\"",
+    "dev:web": "vite",
+    "dev:api": "tsx watch server/index.ts",
+    "build": "tsc -b && vite build",
+    "start": "NODE_ENV=production tsx server/index.ts",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "selftest": "tsx scripts/selftest.ts",
+    "setup": "bash scripts/setup.sh",
+    "service:install": "bash scripts/service.sh install",
+    "service:uninstall": "bash scripts/service.sh uninstall",
+    "service:status": "bash scripts/service.sh status",
+    "service:restart": "bash scripts/service.sh restart",
+    "service:logs": "bash scripts/service.sh logs",
+    "addin": "bash scripts/install-addin.sh"
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "^1.4.0",
+    "cors": "^2.8.6",
+    "diff": "^9.0.0",
+    "dompurify": "^3.4.17",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "marked": "^18.1.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typebox": "^1.4.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/diff": "^7.0.2",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.19.2",
+    "@types/office-js": "^1.0.614",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "concurrently": "^10.0.6",
+    "oxlint": "^1.88.0",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.4"
+  }
+}

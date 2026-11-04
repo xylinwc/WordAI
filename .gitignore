@@ -1,0 +1,43 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# WordAI-v2
+.env
+certs/
+.DS_Store
+
+# 本地私有笔记(不随开源仓库发布)
+docs/DEVLOG.md
+docs/TODO.md
+
+# 打包产物
+release/
+*.zip
+
+# 本地私有:开发过程内容,不入库(文件仍在本地可用)
+AGENTS.md
+docs/ARCHITECTURE.md
+scripts/e2e-agent.mjs
+scripts/release-zip.sh
